@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/I2IM_1.js"></script>
+        <script src="data/BCA_2.js"></script>
+        <script src="data/PDPIAS_3.js"></script>
+        <script src="data/CSPIT_4.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:17
+        }).fitBounds([[22.598400110185555,72.81529111144461],[22.604406492447602,72.8237248682682]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        var layer_OpenStreetMap_0 = L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 0.8,
+            attribution: '',
+        });
+        layer_OpenStreetMap_0;
+        map.addLayer(layer_OpenStreetMap_0);
+        function pop_I2IM_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_I2IM_1_0() {
+            return {
+                pane: 'pane_I2IM_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(227,26,28,1.0)',
+            }
+        }
+        map.createPane('pane_I2IM_1');
+        map.getPane('pane_I2IM_1').style.zIndex = 401;
+        map.getPane('pane_I2IM_1').style['mix-blend-mode'] = 'normal';
+        var layer_I2IM_1 = new L.geoJson(json_I2IM_1, {
+            attribution: '',
+            pane: 'pane_I2IM_1',
+            onEachFeature: pop_I2IM_1,
+            style: style_I2IM_1_0,
+        });
+        bounds_group.addLayer(layer_I2IM_1);
+        map.addLayer(layer_I2IM_1);
+        function pop_BCA_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BCA_2_0() {
+            return {
+                pane: 'pane_BCA_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(221,122,147,1.0)',
+            }
+        }
+        map.createPane('pane_BCA_2');
+        map.getPane('pane_BCA_2').style.zIndex = 402;
+        map.getPane('pane_BCA_2').style['mix-blend-mode'] = 'normal';
+        var layer_BCA_2 = new L.geoJson(json_BCA_2, {
+            attribution: '',
+            pane: 'pane_BCA_2',
+            onEachFeature: pop_BCA_2,
+            style: style_BCA_2_0,
+        });
+        bounds_group.addLayer(layer_BCA_2);
+        map.addLayer(layer_BCA_2);
+        function pop_PDPIAS_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PDPIAS_3_0() {
+            return {
+                pane: 'pane_PDPIAS_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(63,50,212,1.0)',
+            }
+        }
+        map.createPane('pane_PDPIAS_3');
+        map.getPane('pane_PDPIAS_3').style.zIndex = 403;
+        map.getPane('pane_PDPIAS_3').style['mix-blend-mode'] = 'normal';
+        var layer_PDPIAS_3 = new L.geoJson(json_PDPIAS_3, {
+            attribution: '',
+            pane: 'pane_PDPIAS_3',
+            onEachFeature: pop_PDPIAS_3,
+            style: style_PDPIAS_3_0,
+        });
+        bounds_group.addLayer(layer_PDPIAS_3);
+        map.addLayer(layer_PDPIAS_3);
+        function pop_CSPIT_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CSPIT_4_0() {
+            return {
+                pane: 'pane_CSPIT_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(23,8,9,1.0)',
+            }
+        }
+        map.createPane('pane_CSPIT_4');
+        map.getPane('pane_CSPIT_4').style.zIndex = 404;
+        map.getPane('pane_CSPIT_4').style['mix-blend-mode'] = 'normal';
+        var layer_CSPIT_4 = new L.geoJson(json_CSPIT_4, {
+            attribution: '',
+            pane: 'pane_CSPIT_4',
+            onEachFeature: pop_CSPIT_4,
+            style: style_CSPIT_4_0,
+        });
+        bounds_group.addLayer(layer_CSPIT_4);
+        map.addLayer(layer_CSPIT_4);
+        setBounds();
+        </script>
+    </body>
+</html>
