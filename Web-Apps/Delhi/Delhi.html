@@ -1,0 +1,200 @@
+<html>
+<head>
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+*{
+	margin: 0;
+}
+html, body{
+	height: 100%;
+}
+nav{
+	position: fixed;
+	width:100%;
+	height: 50px;
+	background-color: rgba(0,0,0,.5);
+	z-in
+	dex: 99;
+}
+.sect{
+	height:100%; 
+	background-size:cover;
+	background-attachment: fixed;
+	background-image:url("buffer.jpg");
+}	
+section{
+	padding:0 100px;
+	height: 100vh;
+	display:flex;
+	align-items:center;
+	flex-direction: row-reverse;
+}
+/*font in box*/
+.box p
+{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-weight:bold;
+	font-family: Times, "Times New Roman", serif;
+	color: black;
+	text-align:justify;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+.box{
+	position: relative;
+	padding: 50px;
+	background: rgba(255,255,255,.5);
+	box-shadow: 0 5px 15px rgba(0,0,0,1);
+}	
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body background="">
+<button class="open-button" onclick="openForm()">Admin Login</button>
+
+<div class="form-popup" id="myForm">
+		<form id="formContainer" action="Delhi_Admin/index.html" class="form-container" method="post">
+			<h1>Login</h1>
+
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Enter Username" id="mail" name="mail" required>
+	
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" id="pswd" name="pswd" required>
+	
+			<button type="submit" class="btn" onClick="loginbt()">Login</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</form>
+	</div>
+	
+	<script>
+
+		
+		
+		function loginbt() {
+			
+			var uname = document.getElementById("mail").value;
+			var pwd = document.getElementById("pswd").value;
+			
+			if(uname === "admin")
+			{
+				if(pwd === "admin")
+				{
+					document.getElementById("formContainer").submit();
+				}
+				else
+				{
+					document.getElementById("formContainer").reset();
+				}
+			}
+			else
+			{
+				document.getElementById("formContainer").reset();
+			}
+		}
+
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+			document.getElementById("formContainer").reset();
+		}
+
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+			document.getElementById("formContainer").reset();
+		}
+		
+</script>
+
+
+<nav style="color:white; font-size:20pt;">
+<center style="margin-top:10px;"><a href="C:\Users\rjosh\Desktop\GitHub Final\index.html" style="text-decoration:none; color: white;">Delhi Bank analysis</a></center></nav>
+<button class="open-button" style="position: fixed; bottom: 23px; left: 28px; width: 250px;" onclick="location.href='Delhi_General/index.html'">Launch App</button>
+<div class="sect">
+	<section>
+		<div class="box">
+			<h2><center>Introduction</center></h2>
+<p>With the help of 'Delhi ATM buffer analysis',
+ the management section of any bank can get basic idea related to transaction happened using their bank's ATM respectively.
+ Which will clearly help the organization to perform analysis and will give idea regarding cash refill time and establishment of 
+ new ATM machines in the areas which have higher requirement according to survey.<br><br>
+ This module is devided in two parts.<br>
+ 1> Normal Users<br>
+ 2> Administration<br>
+ Normal users can get the bank name as well as the ATM name. Where as in admin section bank adminisration can get 
+ the information about the tra done in each atm as well as the amount available in atm at the start of the day.
+</p>
+</div></section>
+</div>
+
+</body>
+</html>

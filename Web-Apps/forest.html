@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<style>
+	
+		body {
+			background: #5CDB95;
+			margin: 0px;
+		}
+		
+		/* Image Left and Logo */
+		img.logo {
+			width: 20%;
+			border-radius: 50%;
+			text-align: left;
+			margin: 18px 0 12px 0;
+			position: relative;
+			float: left;
+		}
+
+		/* Title left -- GIS Visualisation*/
+		.titleStyle {
+			padding-top: 0px;
+			color: #05386B;
+			position: relative;
+			float: left;
+			font-size: 39px;
+		}
+
+		.launchStyle {
+			padding-top: 0px;
+			color: #05386B;
+			position: relative;
+			float: right;
+			font-size: 39px;
+		}
+
+	</style>
+	
+	<script>
+	
+		function openCity(evt, cityName) {
+			var i, x, tablinks;
+			x = document.getElementsByClassName("city");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" w3-white", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " w3-white";
+		}
+		
+	</script>
+	
+</head>
+
+<body>
+
+	<!-- Title and Launch Info Panel -->
+	<div class="w3-row w3-mobile">
+	
+		<div class="w3-col w3-container w3-right w3-mobile" style="width:379px">
+			<div class="w3-panel w3-bottombar w3-leftbar w3-topbar w3-rightbar w3-border-indigo w3-mobile w3-hover-white" style="width:100%;">
+					<a href="Forest Survey/index0.html"><h1 class="launchStyle"><b>Launch the Tool!</b></h1></a>
+			</div>
+		</div>
+		
+		<div class="w3-rest w3-mobile">	
+			<div class="w3-container w3-mobile" style="bgcolor: #5CDB95;">
+			
+				<!-- Title and Logo -->
+				<div class="w3-panel w3-rightbar w3-topbar w3-bottombar w3-border-indigo w3-mobile" style="width:100%;">
+					<a href="homepage.html"><h1 class="titleStyle"><b>GIS Visualisation</b></h1></a>
+				</div>
+	
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	<!--Sub Title -->
+	<div class="w3-panel" style="color: #EDF5E1;">
+		<h1 style="text-align: center; color: #05386B; font-size: 39px;"><b>Forest Cover India 2017</b></h1>
+	</div>
+	
+	
+	<!-- Intro Forest -->
+	<div class="w3-display-container w3-text-white">
+		<img class="w3-image" src="Screenshots/tree.png" alt="Lights" style="width: 100%;">	
+		<div class="w3-display-bottomleft w3-large w3-mobile">
+			<p class="w3-container" style="text-align: center; font-size: 1.8vw; color: #EDF5E1;">This is the 15th forest cover assessment in the series of biennial forest cover assessments initiated in the year 1987. These biennial assessments describe "how much and where our forest cover is, irrespective of its origin, species, ownership, land use or legal status". All tree stands with canopy density over 10% having an extent of more than 1 Ha (being the minimum Mapping Unit) including bamboos, orchards, coconut, palm etc within recorded forest, private, community or industrial lands are thus reflected in the assessment of forest cover. This helps forest managers and policy makers involved in scientific management to track the changes in forest cover.</p>
+		</div>	
+	</div>
+
+	
+	<!-- Classification info panel -->	
+	<br><br>
+	<div class="w3-panel w3-bottombar w3-border-indigo w3-mobile" style="width:41%;">
+		<h1 style="text-align: left; text-justify: inter-word; color: #05386B; font-size: 38px;"><b>Forest Cover (2017 Assessment):</b></h1>
+	</div>
+	
+	<div class="w3-container w3-panel w3-mobile" style="background: #05386B">
+		<h2 style="text-align: justify; text-justify: inter-word; color: #EDF5E1; font-size: 1.7vw">The total forest cover of the country, as per the assessment made in 2017 is 7,08,273 sq km which is around 21.54% of the total geographical area of the country. The forest cover has been classified on the basis of the tree canopy density into pre-defined classes:</h2>	
+	</div>
+	
+	
+	<!-- Tabs for each category -->
+	<div class="w3-container w3-mobile">
+		
+		<div class="w3-bar w3-xlarge" style="background: #05386B;">
+			<button class="w3-bar-item w3-button w3-white w3-hover-pale-green tablink" style="color: #EDF5E1;" onclick="openCity(event,'vdf')">Very Dense Forest</button>
+			<button class="w3-bar-item w3-button w3-hover-pale-green tablink" style="color: #EDF5E1;" onclick="openCity(event,'mdf')">Moderately Dense Forest</button>
+			<button class="w3-bar-item w3-button w3-hover-pale-green tablink" style="color: #EDF5E1;" onclick="openCity(event,'opf')">Open Forest</button>
+		</div>
+		
+		<!-- Very Dense Forest Info Box-->
+		<div id="vdf" class="w3-container city w3-mobile" style="border: 2px solid white; border-top-style: none; background: white;">
+			<div class="w3-row">	
+				<div class="w3-col w3-container w3-right" style="width:215px">
+					<img src="Screenshots/vdf.png" alt="veryDense" style="width:100%">
+				</div>
+				
+				<div class="w3-rest w3-container">
+					<h2>Very Dense Forest</h2>
+					<p>All lands with tree canopy density of 70 percent and above fall under the category of Very Dense Forest. In terms of density classes, area covered by Very Dense Forest is 98,158 sq km which is around 2.99% of the total geographical area of the country.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Moderately Dense Forest Info Box-->
+		<div id="mdf" class="w3-container city w3-mobile" style="display:none; border: 2px solid white; border-top-style: none; background: white;">
+			<div class="w3-row">
+				<div class="w3-col w3-container w3-right" style="width:212px">
+					<img src="Screenshots/mdf.png" alt="veryDense" style="width:100%">
+				</div>
+				<div class="w3-rest w3-container">
+					<h2>Moderately Dense Forest</h2>
+					<p>All lands with tree canopy density of 40 percent and more but less than 70 percent fall under the category of Moderately Dense Forest. In terms of density classes, area covered by Moderately Dense Forest is 3,08,318 sq km which is roughly 9.38% of the total geographical area of the country.</p> 
+				</div>
+			</div>
+		</div>
+
+		<!-- Open Forest Info Box-->
+		<div id="opf" class="w3-container city w3-mobile" style="display:none; border: 2px solid white; border-top-style: none; background: white;">
+			<div class="w3-row w3-mobile">
+				<div class="w3-col w3-container w3-right w3-mobile" style="width:212px">
+					<img src="Screenshots/of.png" alt="veryDense" style="width:100%">
+				</div>	
+				<div class="w3-rest w3-container w3-mobile">
+					<h2>Open Forest</h2>
+					<p>All lands with tree canopy density of 10 percent and more but less than 40 percent fall under the category of Open Forest. In terms of density classes, area covered by Open Forest is 3,01,797 sq km corresponding to 9.18% of the total geographical area of the country. Anything less than 10 percent canopy density falls under the category of Scrubs. The area covered by Scrub is 45,797 sq km corresponding to 1.40% of the total geographical area of the country. The non-forest area accounts for 25,33,217 sq km which is roughly 77% of the total geographical area of the country</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</br></br>
+	
+	
+</body>
+
+</html>
+

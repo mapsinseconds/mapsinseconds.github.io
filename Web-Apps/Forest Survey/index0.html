@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<style>
+	
+		body {
+			background: black;
+			overflow: hidden;
+			padding: 0;
+			width: 100vw;
+			height: 100vh;
+		}
+		
+		.wrapper {
+			
+		}
+		
+		h1 {
+			font-size: 100px;
+			color: white;
+		
+		}
+		
+		.preloader {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #fff;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.counter {
+			position: absolute;
+			font-family: Poppins;
+			font-size: 7rem;
+			font-weight: 900;
+			color: #fff;
+			mix-blend-mode: difference;
+		}
+
+		.loader {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			background: #000;
+		}
+		
+		.mapframe1{ 
+			border:4px solid black; 
+			height: 100%;
+			width: 65%;
+		}
+		
+		.mapframe2{
+			border: 4px solid black;
+			height: 100%;
+			width: 33.6%;
+		}
+	
+	</style>
+
+	<script type="text/javascript">
+	
+		document.addEventListener('DOMContentLoaded', () => {
+			let element = document.querySelector('.counter');
+			let loader = document.querySelector('.loader');
+			let preloader = document.querySelector('.preloader');
+			let count = 0;
+			let counter = setInterval(() => {
+				if (count <= 100) {
+					element.textContent = count + '%';
+					loader.style.width = count + '%';
+					count++;
+				} else {
+					clearInterval(counter);
+					fadeOut(preloader);
+				}
+			}, 100);
+
+			//  fadeout
+			function fadeOut(element) {
+				element.style.opacity = 1;
+
+				(function fade() {
+					if ((element.style.opacity -= .1) < 0) {
+						element.style.display = 'none';
+					} else {
+						requestAnimationFrame(fade);
+					}
+				})();
+			}
+		});
+		
+	</script>
+	
+</head>
+
+<body>
+
+	<div class="preloader">
+		<div class="loader"></div>
+		<div class="counter"></div>
+	</div>
+	
+	<iframe src="index.html" class="mapframe1"></iframe>
+	<iframe id="exceli" src="excel.html" class="mapframe2"></iframe>
+	
+</body>
+
+</html>

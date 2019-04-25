@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="final_style.css">
+
+<style>
+.open-button {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 260px;
+  height: 80px;
+  font-size: 28px;
+}
+
+.open-button:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+<button class="open-button" style="position: fixed; bottom: 23px; right: 28px; width: 250px;" onclick="location.href='index.html'">Launch App</button>
+
+<nav style="color:white; font-size:20pt;">
+<center style="margin-top:10px;"><a href="C:\Users\rjosh\Desktop\GitHub Final\index.html" style="text-decoration:none; color: white;">New York City Address Suggetion System</a></center></nav>
+
+<div class="sect sectOne">
+<section>
+<div class="box">
+<h2><center>Introduction</center></h2>
+<p>As the lines blur between the map’s function as a navigation tool, a  platform for data analysis, and an outlet for storytelling,
+new GIS visualizations emerge every day. Here in New York City address suggestion system we have taken point location data of various
+amenities of NYC like Hospitals, Schools, Libraries, Subway station. We have created buffer of 2 KMs. range on those point locations. 
+After that we have performed intersectoin on those buffer to get best area from which all the amenities, facilities are near by.<br><br>
+Now we'll explain what is buffer and intersection of point data. And after that we'll see the resulted best location of NYC for living to 
+get maximum nearby facilities. It will show street name as well as the names of all the places which are easily accessible from that location.
+</p>
+</div></section>
+</div>
+
+<div class="subsect">
+<h2 style="margin-bottom:15px; color:white;"><center>What is Buffer?</center></h2>
+<p style="margin: 0;padding: 0;font-size: 20px;font-weight:bold;color:white;text-align:justify;">
+A buffer zone is any area that serves the purpose of keeping real world features distant from one another.
+Buffer zones are often set up to protect the environment, protect residential and commercial zones from industrial accidents or natural disasters,
+or to prevent violence. Common types of buffer zones may be greenbelts between residential and commercial areas, border zones between countries,
+noise protection zones around airports, or pollution protection zones along rivers. It creates a fixed range area around the point location data 
+to find out the required locaions available in that particular region.
+</p>
+</div>
+
+<div class="sect sectTwo"></div>
+
+<div class="subsect">
+<h2 style="margin-bottom:15px;color:white;"><center>What is Intersection?</center></h2>
+<p style="margin: 0;padding: 0;font-size: 20px;font-weight:bold;color: white; text-align:justify;">
+Intersect tools allow you to exclude the area that is not overlapping. The buffer created around the point data will be intersected with each other 
+to find out the area common in between.This algorithm clips a vector layer using the polygons of an additional polygon layer. 
+Only the parts of the features in the input layer that falls within the polygons of the clipping layer will be added to the resulting layer.<br><br>
+As we can see here, the orange circles are the buffer created on one point data locations and the pink circles are the another point dat set buffer.
+The purple areas are the ares of intersection of those two buffers.
+</p>
+</div>
+
+<div class="sect sectThree"></div>
+
+</body>
+</html>

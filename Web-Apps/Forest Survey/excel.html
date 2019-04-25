@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<style>
+	
+		body {
+			height: 100%;
+			margin: 0;
+		}
+		
+		.mapframe1{ 
+			border:4px solid black; 
+			height:695px;
+			width:65%;
+		}
+	
+		a {
+			text-decoration: none;
+		}
+	
+	</style>
+	
+</head>
+<body bgcolor="black">
+    
+	<div class="w3-card-4" style="width:100%;" id="final">
+	
+		<!-- Title and Header -->
+		<header class="w3-container w3-yellow">
+			<a href="C:\Users\rjosh\Desktop\BISAG Project\homepage.html" id="excelpass" ><h1>Forest Survey Of India 2017</h1></a>
+		</header>
+		
+		<!-- Information -->
+		<div class="w3-container w3-white">
+			<p>Select the Category from the dropdown below to view the detailed report in the below window. Click the download button to download an excel report.</p>
+			<!--<a class="w3-btn w3-block w3-yellow w3-hover-white" href="Forest_2017.xlsx" style="width:30%" download>Download</a>-->
+		</div>
+		
+		<!-- Dropdown and Download -->
+		<div class="w3-dropdown-hover w3-block w3-teal">
+			<button class="w3-button w3-block">Select from here!</button>
+			<div class="w3-dropdown-content w3-bar-item w3-card-4">
+				<a id="geob" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDFeiyCHQjjmnQhRl8OR0vQ5YmkipzCLX46NuDpcHS88JHzkpUoT6kigDTJUGiHvYBxG6tLiI-T63A/pubhtml?widget=true&amp;headers=true" class="w3-bar-item w3-button w3-bar w3-hover-black" style="width: 104%" target="final">Geographic Cover</a>
+				<a id="changeb" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzBHPoSzf8ktwx3aZLVOTSQo3qOvVq4hQosMQwf9dd7EqHdC-soryjtZ3eWXhixOVjc6dIXjJ-qynL/pubhtml?widget=true&amp;headers=true" class="w3-bar-item w3-button w3-bar w3-hover-black" style="width: 104%" target="final">Change wrt ISFR 2015</a>
+				<a id="verydb" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRgk6bpOX85iG-XjpH_JLM5MkkWHhzieLFHx1aIFi0-Bu-6YJC8wnFKJW0MAnSJaa0nsx0Ns588029v/pubhtml?widget=true&amp;headers=false" class="w3-bar-item w3-button w3-bar w3-hover-black" style="width: 104%" target="final">Very Dense Forest</a>
+				<a id="moderateb" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsKj2l6tlGw1Gyw_tpxM8h1HNbzR7AmAx14LHlL-I3knxqfup-djtgIUzocr5UQp3AWMMNDF90xxkS/pubhtml?widget=true&amp;headers=false" class="w3-bar-item w3-button w3-bar w3-hover-black" style="width: 104%" target="final">Moderately Dense Forest</a>
+				<a id="openfb" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQjPcj33DNjJoGc0i1C05NDxFE4GDKd21PNexJWbJG3kXIJNd7r6zzUgSNFmtC6mRsRR8nvl4wXfWaw/pubhtml?widget=true&amp;headers=false" class="w3-bar-item w3-button w3-bar w3-hover-black" style="width: 104%" target="final">Open Forest</a>
+				<a id="downloadr" href="Forest_2017.xlsx" class="w3-bar-item w3-button w3-bar w3-teal w3-hover-black" style="width: 104%" target="final">Download the Report</a>
+			</div>
+		</div>
+		
+		<!-- Report iFrame -->
+		<iframe name="final" style="position: relative;"height="530px" width="100%"></iframe>
+		
+	</div>
+	
+</body>
+	
+</html>
+
