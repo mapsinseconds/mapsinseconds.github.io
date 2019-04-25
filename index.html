@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+<style>
+	
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: black;
+  color: #d0cfcf;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 250px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  overflow: auto;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #565254;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: green;
+  color: #FDFFFC;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 1;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 0.8;
+}
+
+/* Image Left and Logo */
+img.logo {
+	width: 60%;
+	border-radius: 0%;
+	text-align: left;
+	margin: 18px 0 12px 0;
+	position: relative;
+	float: left;
+}
+
+/* Title left -- GIS Visualisation*/
+.titleStyle {
+	padding-top: 50px;
+	color: white;
+	position: relative;
+	float: left;
+	margin 36px 0 24px 0;
+}
+
+.containerText {
+	background-color: #d0cfcf;
+	padding-top: 0px; 
+	border-top-style: solid;
+	border-left: 15px solid #565254;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-radius: 5px;
+}	
+
+.devinfo {
+	float: right; 
+	background-color:black;
+	color: white;
+	border: 2px solid white;
+	padding: 1%;
+
+}
+
+	</style>
+</head>
+
+<body bgcolor="black">
+
+	<div class="w3-container w3-black w3-mobile">
+	
+		<!-- Title and Logo -->
+		<div class="w3-card w3-black w3-mobile" style="width:50%">
+			<a href="index.html"><img src="Web-Apps/Screenshots/esri.png" alt="Avatar" class="logo">
+			<!--<h1 class="titleStyle"><b>GIS Visualisation</b></h1></a>-->
+		</div>
+	</div>	
+	
+	<!-- Development Navigation -->
+	<div class="w3-bar w3-teal w3-xlarge">
+		<a href="#" class="w3-bar-item w3-button w3-mobile w3-hover-teal">Development Team:</a>
+		<a href="#" class="w3-bar-item w3-button w3-mobile">Rinkesh Joshi</a>
+		<a href="#" class="w3-bar-item w3-button w3-mobile">Jay Mehta</a>
+		<a href="#" class="w3-bar-item w3-button w3-mobile">Vishwarajsinh Vala</a>
+	</div>
+	<br>
+	
+	<!-- Information Panel -->
+	<div class="w3-card-4 w3-black w3-mobile" style="width:100%;">
+		<!--<header class="w3-container w3-black w3-dark-gray">
+			<h2>GIS (Geographic Information System):</h2>
+		</header>-->
+		<div class="w3-panel w3-deep-purple">
+			<h1 style="text-align: justify; text-justify: inter-word;">What is GIS ?</h1>
+		</div>
+		<div class="w3-container w3-panel w3-rightbar w3-border-deep-orange w3-mobile" style="margin-left : 340px">
+			<h4 style="text-align: justify; text-justify: inter-word;">A geographic information system (GIS) is a framework for gathering, managing, and analyzing data. Rooted in the science of geography, GIS integrates many types of data. It analyzes spatial location and organizes layers of information into visualizations using maps and 3D scenes. ​With this unique capability, GIS reveals deeper insights into data, such as patterns, relationships, and situations—helping users make smarter decisions. </h4>
+		</div>
+		<br>
+		<div class="w3-panel w3-deep-purple">
+			<h1 style="text-align: right; text-justify: inter-word;">How GIS Works</h1>
+		</div>
+		<div class="w3-container w3-panel w3-leftbar w3-border-deep-orange w3-mobile" style="margin-right : 700px">
+			<h4 style="text-align: justify; text-justify: inter-word;">GIS technology applies geographic science with tools for understanding and collaboration. It helps people reach a common goal: to gain actionable intelligence from all types of data.</h4>
+		</div>
+		
+		<br><br>
+		<div class="w3-row-padding w3-margin-top">
+			<div class="w3-quarter">
+				<img src="Web-Apps/Screenshots/maps.png" style="width:100%;">
+				<div class="w3-container">
+					<h3><b>Maps</b></h3>
+					<h4 style="text-align: justify; text-justify: inter-word;">Maps are the geographic container for the data layers and analytics you want to work with. GIS maps are easily shared and embedded in apps, and accessible by virtually everyone, everywhere.</h4>
+				</div>
+			</div>
+
+			<div class="w3-quarter">
+				<img src="Web-Apps/Screenshots/data.png" style="width:100%">
+				<div class="w3-container">
+					<h3><b>Data</b></h3>
+					<h4 style="text-align: justify; text-justify: inter-word;">GIS integrates many different kinds of data layers using spatial location. Most data has a geographic component. GIS data includes imagery, features, and basemaps linked to spreadsheets and tables.</h4>
+				</div>
+			</div>
+
+			<div class="w3-quarter">
+				<img src="Web-Apps/Screenshots/analysis.png" style="width:100%">
+				<div class="w3-container">
+					<h3><b>Analysis</b></h3>
+					<h4 style="text-align: justify; text-justify: inter-word;">Spatial analysis lets you evaluate suitability and capability, estimate and predict, interpret and understand, and much more, lending new perspectives to your insight and decision-making.</h4>
+				</div>
+			</div>
+
+			<div class="w3-quarter">
+				<img src="Web-Apps/Screenshots/apps.png" style="width:100%">
+				<div class="w3-container">
+					<h3><b>Apps</b></h3>
+					<h4 style="text-align: justify; text-justify: inter-word;">Apps provide focused user experiences for getting work done and bringing GIS to life for everyone. GIS apps work virtually everywhere: on your mobile phones, tablets, in web browsers, and on desktops.</h4>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	
+		<footer class="w3-container w3-teal w3-mobile">
+			<h3>Choose the Module for detailed information (Select a card from below):</h3>
+		</footer>
+	</div>
+	
+	<!--<div class="w3-card-4" style="width: 100%">
+		<header class="w3-container w3-green">
+			<h2>GIS (Geographic Information System):</h2>
+		</header>
+		<div class="w3-panel w3-leftbar w3-border-green w3-pale-green">
+			<h4>All the information goes here.</h4>
+		</div>
+	</div>-->
+
+
+	<div class="w3-show-inline-block">
+	
+		<div class="w3-bar">
+		
+			<div class="w3-button w3-black w3-hover-teal w3-mobile" style="width:49.8%" onClick="location.href='Web-Apps/forest.html'">
+				<img src="Web-Apps/Screenshots/forest.jpg" alt="FSOI" style="width:100%" class="w3-padding">
+				<div class="w3-container w3-center">
+					<h1>Forest Survery Of India 2017</h1>
+				</div>
+			</div>
+		
+			<div class="w3-button w3-black w3-hover-teal w3-mobile" style="width:49.8%" onClick="location.href='Web-Apps/Delhi/Delhi.html'">
+				<img src="Web-Apps/Screenshots/buffer.jpg" alt="Delhi_Buffer" style="width:100%;" class="w3-padding">
+				<div class="w3-container w3-center">
+					<h1>Delhi Buffer Implementation</h1>
+				</div>
+			</div>
+		
+			<div class="w3-button w3-black w3-hover-teal w3-mobile" style="width:49.8%" onClick="location.href='Web-Apps/New York/index0.html'">
+				<img src="Web-Apps/Screenshots/nyc.png" alt="FSOI" style="width:100%" class="w3-padding">
+				<div class="w3-container w3-center">
+					<h1>Newyork Address Suggestion System</h1>
+				</div>
+			</div>
+			
+		</div>
+		
+		</div>
+		
+	</div>
+
+
+
+	<!--<button class="w3-btn w3-white w3-hover-black w3-xxlarge" style="position: fixed; bottom: 23px; right: 28px; width: 250px;" onclick="openForm()">Admin Login</button>-->
+
+	<div class="form-popup" id="myForm">
+		<form id="formContainer" action="index.html" class="form-container" method="post">
+			<h1>Login</h1>
+
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Enter Username" id="mail" name="mail" required>
+	
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" id="pswd" name="pswd" required>
+	
+			<button type="submit" class="btn" onClick="loginbt()">Login</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</form>
+	</div>
+	<!--</div>-->
+	<script>
+
+		var uname = document.getElementById("mail").value;
+		var pwd = document.getElementById("pswd").value;
+		
+		function loginbt() {
+
+			window.alert(uname);
+			//document.getElementById("demo").innerHTML = uname;
+			if(uname == "admin")
+			{
+				if(pwd == "admin")
+				{
+					document.getElementById("formContainer").submit();
+				}
+			}
+			else
+			{
+				document.getElementById("formContainer").reset();
+			}
+			//document.getElementById("formContainer").reset();
+		}
+
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+			document.getElementById("formContainer").reset();
+		}
+
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+			document.getElementById("formContainer").reset();
+		}
+
+		/*window.onclick = function(event) {
+			if(event.target == form-popup){
+			form-popup.style.display = "none";
+			}
+		}*/
+ 
+
+		/*function delhi() {
+  
+		}*/
+	</script>
+
+</body>
+</html>
+
